@@ -341,22 +341,30 @@
     }
 
     const imageLightbox = ensureImageLightbox();
-    const zoomableImages = $$('.template-modal__image', modal);
-    zoomableImages.forEach((img) => {
-      img.classList.add('is-zoomable');
-      img.setAttribute('tabindex', '0');
-      img.setAttribute('role', 'button');
-      img.setAttribute('aria-label', `${img.alt || 'Image'} - click to zoom`);
-      img.addEventListener('click', () => {
-        imageLightbox.openImageLightbox(img.getAttribute('src'), img.getAttribute('alt'));
-      });
-      img.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
+    function makeImagesZoomable(images) {
+      images.forEach((img) => {
+        img.classList.add('is-zoomable');
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', `${img.alt || 'Image'} - click to zoom`);
+        img.addEventListener('click', () => {
           imageLightbox.openImageLightbox(img.getAttribute('src'), img.getAttribute('alt'));
-        }
+        });
+        img.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            imageLightbox.openImageLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+          }
+        });
       });
-    });
+    }
+
+    const zoomableImages = $$('.template-modal__image', modal);
+    makeImagesZoomable(zoomableImages);
+
+    // Make About section photos expand with the same lightbox.
+    const aboutPhotos = $$('.about__photo');
+    makeImagesZoomable(aboutPhotos);
 
     closeBtn && closeBtn.addEventListener('click', closeModal);
     closeBackdrop && closeBackdrop.addEventListener('click', closeModal);
