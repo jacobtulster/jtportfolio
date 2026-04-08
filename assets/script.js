@@ -149,36 +149,36 @@
             <p>I would like to create an app which would solve that problem for him, and so many other people. It is about making education equal for everyone - because from personal experience, I think some schools do not pay enough attention to students who have learning difficulties and they just expect all students to be on a level playing field and robotically excel through all of their subjects. My school gave out extra work for people who failed in-class tests and I can just feel that a person with learning difficulties would just get completely overwhelmed with the quantity and the difficulty of the work.</p>
             <p>I think I need to create a revision app which would be more catered to people with learning difficulties and it will break down complex subjects into a more fun, learning experience - with breaks in-between.</p>
             <figure class="template-modal__figure">
-              <img class="template-modal__image" src="./sdg.png" alt="Sustainable Development Goals list with SDG 4 quality education highlighted." loading="lazy" decoding="async">
+              <img class="template-modal__image" src="assets/sdg.png" alt="Sustainable Development Goals list with SDG 4 quality education highlighted." loading="lazy" decoding="async">
             </figure>
             <figure class="template-modal__figure">
-              <img class="template-modal__image" src="./sdg2.jpg" alt="Writing down initial thoughts that come into my head for accessibility and how I would approach the app" loading="lazy" decoding="async">
+              <img class="template-modal__image" src="assets/sdg2.jpg" alt="Writing down initial thoughts that come into my head for accessibility and how I would approach the app" loading="lazy" decoding="async">
               <figcaption class="template-modal__caption">Writing down initial thoughts that come into my head for accessibility and how I would approach the app</figcaption>
             </figure>
             <section class="template-modal__image-grid" aria-label="Research reference images">
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg3.jpg" alt="Research screenshot about SDG 4 quality education and COVID-19 context." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg3.jpg" alt="Research screenshot about SDG 4 quality education and COVID-19 context." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg4.jpg" alt="Research screenshot exploring neurodivergent color references." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg4.jpg" alt="Research screenshot exploring neurodivergent color references." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg5.jpg" alt="Research screenshot identifying users who benefit from accessibility in education." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg5.jpg" alt="Research screenshot identifying users who benefit from accessibility in education." loading="lazy" decoding="async">
               </figure>
             </section>
             <p class="template-modal__caption template-modal__caption--grid">Understanding and learning about the different disabilities and becoming more familiar with neurodivergence</p>
             <section class="template-modal__image-grid template-modal__image-grid--four" aria-label="Brand inspiration research images">
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg6.jpg" alt="Research image showing mortarboard references for graduation-themed branding." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg6.jpg" alt="Research image showing mortarboard references for graduation-themed branding." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg7.jpg" alt="Research image showing serif letter E references for education branding." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg7.jpg" alt="Research image showing serif letter E references for education branding." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg8.jpg" alt="Research image showing color palette exploration for the brand direction." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg8.jpg" alt="Research image showing color palette exploration for the brand direction." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg9.jpg" alt="Research image showing common subject emojis for potential app iconography." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg9.jpg" alt="Research image showing common subject emojis for potential app iconography." loading="lazy" decoding="async">
               </figure>
             </section>
             <p class="template-modal__caption template-modal__caption--grid">Finding initial inspiration for the logomark, looking at "E" serif, tapping into that education feel for the brand, creating a colour scheme for the brand, and finding out common emojis for different subjects and thinking about how I can portray them in the app.</p>
@@ -186,57 +186,57 @@
             <p>The name I have settled on is "Equl", the slogan is "making education, equl", and the logomark will be a university cap to emphasise that it is education-focused (although it is not only used for university, it can be used universally from primary school to secondary school to university).</p>
             <section class="template-modal__image-grid template-modal__image-grid--two" aria-label="Brand and onboarding sketches">
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg10.jpg" alt="Sketch of an onboarding screen with fields and disability preference inputs." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg10.jpg" alt="Sketch of an onboarding screen with fields and disability preference inputs." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg11.jpg" alt="Sketch of the Equl logomark concept using a university cap and slogan notes." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg11.jpg" alt="Sketch of the Equl logomark concept using a university cap and slogan notes." loading="lazy" decoding="async">
               </figure>
             </section>
             <figure class="template-modal__figure">
-              <img class="template-modal__image" src="./sdg12.png" alt="Slide snippet showing accessibility statistics from a Zoom lecture with David from Big Motive." loading="lazy" decoding="async">
+              <img class="template-modal__image" src="assets/sdg12.png" alt="Slide snippet showing accessibility statistics from a Zoom lecture with David from Big Motive." loading="lazy" decoding="async">
               <figcaption class="template-modal__caption">A snippet from today’s zoom call with David from Big Motive</figcaption>
             </figure>
             <p>Today’s lecture was very relevant for me because my SDG is very focused on making education accessible for all, so this felt on point. I was stunned to hear that 94.8% of all websites are inaccessible, whether it is the inability for screen readers to read them, or that they do not meet the bare minimum of AA WCAG guidelines (nevermind AAA!). Something that David mentioned is that some clients of Big Motive in the past had pictures (JPEG for example) on their site with text inside them, thinking that it would pass accessibility. It may be shocking to some people that this would not pass accessibility because there is no alt text available for the screen reader to read for the visually impaired.</p>
             <p>Another thing which David mentioned is that frankly, a lot of people just do not take accessibility into account and see it as an afterthought. The positive that I can take from this is that we, as UX designers, can correct this big problem and hopefully make the web more accessible. That is the idea I am going for with my SDG app called "Equl". The lecture this week really inspired me to keep pursuing improvement on accessibility, and it is refreshing to know that other UX designers care.</p>
             <p>As we are approaching the end of the SDG project, it was time for me to take my sketches and digitise them. I looked into how academic caps were represented digitally. I wanted to keep some of the elements while bringing in my colour scheme which resonates with neurodivergent people - I found this colour scheme in Week 4, and it created a nice contrast. Below are my designs which I am preparing for the critique next week:</p>
             <figure class="template-modal__figure">
-              <img class="template-modal__image" src="./sdg14.png" alt="Standalone digital brand exploration image." loading="lazy" decoding="async">
+              <img class="template-modal__image" src="assets/sdg14.png" alt="Standalone digital brand exploration image." loading="lazy" decoding="async">
             </figure>
             <section class="template-modal__image-grid template-modal__image-grid--four" aria-label="First grid of digital design explorations">
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg15.png" alt="Digital design exploration image one." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg15.png" alt="Digital design exploration image one." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg16.png" alt="Digital design exploration image two." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg16.png" alt="Digital design exploration image two." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg17.png" alt="Digital design exploration image three." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg17.png" alt="Digital design exploration image three." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg18.png" alt="Digital design exploration image four." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg18.png" alt="Digital design exploration image four." loading="lazy" decoding="async">
               </figure>
             </section>
             <section class="template-modal__image-grid template-modal__image-grid--four" aria-label="Second grid of digital design explorations">
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg19.png" alt="Digital design exploration image five." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg19.png" alt="Digital design exploration image five." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg20.png" alt="Digital design exploration image six." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg20.png" alt="Digital design exploration image six." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg21.png" alt="Digital design exploration image seven." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg21.png" alt="Digital design exploration image seven." loading="lazy" decoding="async">
               </figure>
               <figure class="template-modal__figure template-modal__figure--grid">
-                <img class="template-modal__image" src="./sdg22.png" alt="Digital design exploration image eight." loading="lazy" decoding="async">
+                <img class="template-modal__image" src="assets/sdg22.png" alt="Digital design exploration image eight." loading="lazy" decoding="async">
               </figure>
             </section>
             <p>At the end of the lecture, we were able to show Kyle our designs. He gave me really valuable feedback, what I did right, and what I can improve upon for the critique next week. I quickly jotted them down below:</p>
             <figure class="template-modal__figure">
-              <img class="template-modal__image" src="./sdg24.jpg" alt="Handwritten notes capturing critique feedback points from Kyle." loading="lazy" decoding="async">
+              <img class="template-modal__image" src="assets/sdg24.jpg" alt="Handwritten notes capturing critique feedback points from Kyle." loading="lazy" decoding="async">
             </figure>
             <p>Today’s class, week 9, was the critique for our SDGs. I got a lot of nice feedback from Kyle and the class. The new designs which I added this week were the "boss battle" learning experience.</p>
             <figure class="template-modal__figure">
-              <img class="template-modal__image" src="./sdg25.png" alt="Screens showing the flow from start lesson into boss battle." loading="lazy" decoding="async">
+              <img class="template-modal__image" src="assets/sdg25.png" alt="Screens showing the flow from start lesson into boss battle." loading="lazy" decoding="async">
               <figcaption class="template-modal__caption">Start Lesson &gt; Boss Battle</figcaption>
             </figure>
             <p>The core piece of feedback which resonates the most with me is that I was testing the user on a subject before giving them the flashcards. The way of going about things is giving the user the flashcards and learning resources and then testing the user. I was very caught up in the "test your knowledge" user interfaces. That was very valuable feedback because I know the next steps to take in order to improve my SDG app further.</p>
@@ -249,16 +249,16 @@
             </ul>
             <p>Whenever I talked to Erin, she told me that my education boss battle user interface reminded her of Street Fighter on the Nintendo Switch. That’s exactly what I am going for, especially the health bar and overall user experience. I want education to be more fun and gamified for people with learning difficulties rather than exhausting.</p>
             <figure class="template-modal__figure">
-              <img class="template-modal__image" src="./sdg26.png" alt="Street Fighter reference image used as inspiration for the boss battle interface style." loading="lazy" decoding="async">
+              <img class="template-modal__image" src="assets/sdg26.png" alt="Street Fighter reference image used as inspiration for the boss battle interface style." loading="lazy" decoding="async">
             </figure>
             <hr class="template-modal__divider" aria-hidden="true">
             <p class="template-modal__project-link">
-              <img class="template-modal__project-icon" src="./figma icon.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+              <img class="template-modal__project-icon" src="assets/figma icon.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
               <span class="template-modal__project-label">SDG Project:</span>
               <a class="template-modal__project-anchor" href="https://www.figma.com/design/z8ozabesF4A98n7QOqGLLo/Equl---Revision-App?node-id=0-1&t=hL9X7v0CFXro7k9D-0" target="_blank" rel="noreferrer noopener">Equl - Revision App</a>
             </p>
             <p class="template-modal__project-link">
-              <img class="template-modal__project-icon" src="./figma icon.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+              <img class="template-modal__project-icon" src="assets/figma icon.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
               <span class="template-modal__project-label">SDG Sample Prototype:</span>
               <a class="template-modal__project-anchor" href="https://www.figma.com/proto/etnGCvUKIFo10IDoRnVu73/Equl-Sample-Prototype?node-id=1-2&amp;p=f&amp;t=tdXQds3SmYSwjy65-0&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1" target="_blank" rel="noreferrer noopener">Equl - Sample Prototype</a>
             </p>
@@ -403,13 +403,13 @@
           media.className = 'card__media';
           if (project.coverImage) {
             // Add gradient background for bara svg.svg
-            if (project.coverImage === './bara svg.svg') {
+            if (project.coverImage === 'assets/bara svg.svg') {
               media.style.background = `url("${project.coverImage}"), linear-gradient(135deg, #191411, #302d29)`;
               media.style.backgroundSize = 'contain, cover';
               media.style.backgroundPosition = 'center, center';
               media.style.backgroundRepeat = 'no-repeat, no-repeat';
-            } else if (project.coverImage === './try 2.svg') {
-              media.style.background = `url("${project.coverImage}"), #232222`;
+            } else if (project.coverImage === 'assets/try 2.svg') {
+              media.style.background = `url("${project.coverImage}"), #222223`;
               media.style.backgroundSize = 'contain, cover';
               media.style.backgroundPosition = 'center, center';
               media.style.backgroundRepeat = 'no-repeat, no-repeat';
@@ -451,7 +451,7 @@
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
             card.setAttribute('aria-label', 'Open Graphics Design Portfolio PDF');
-            card.dataset.pdfPath = './Graphics Design Portfolio.pdf';
+            card.dataset.pdfPath = 'assets/Graphics Design Portfolio.pdf';
             card.dataset.pdfTitle = project.title || 'Graphics Design Portfolio';
 
             const openFromCard = () => {
