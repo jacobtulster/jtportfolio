@@ -70,6 +70,7 @@ body {
 
 @media (max-width: 720px) {
   .nav__toggle { display: none; }
+  .nav { width: 94vw; gap: .5rem; }
   .nav__list { 
     position: static; 
     right: auto; 
@@ -83,6 +84,8 @@ body {
     gap: .75rem; 
     box-shadow: none;
     outline: none;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
   .nav__list[data-open="true"] { display: flex; }
 }
@@ -201,8 +204,9 @@ body {
 .carousel__btn.next { right: min(1rem, 3vw); }
 @media (max-width: 720px) {
   .carousel__btn { width: 38px; height: 38px; }
-  .carousel__slide { flex-basis: 30vw; }
-  .carousel .card__body { min-height: 120px; }
+  .carousel__track { padding: .9rem 8vw; gap: .65rem; }
+  .carousel__slide { flex-basis: 78vw; }
+  .carousel .card__body { min-height: 128px; }
 }
 .carousel .card__link { height: auto; grid-template-rows: auto auto; }
 .carousel .card__link { cursor: pointer; }
@@ -476,6 +480,36 @@ body {
 }
 
 @media (max-width: 720px) {
-  .hero__intro { grid-template-columns: 1fr; }
+  .hero { padding-top: 2.2rem; }
+  .hero h1 { white-space: normal; font-size: clamp(1.35rem, 7vw, 2rem); }
+  .subtitle { font-size: .98rem; }
+  .hero__intro { grid-template-columns: 1fr; gap: .9rem; }
+  .profile-pic { width: 120px; height: 120px; }
+  .cta { flex-direction: column; align-items: stretch; gap: .55rem; }
+  .cta .button { width: 100%; }
+
+  .about__photos {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: .35rem;
+  }
+  .about__photo {
+    flex: 0 0 78vw;
+    max-width: none;
+    scroll-snap-align: start;
+  }
+
+  .contact__actions { flex-direction: column; align-items: stretch; }
+  .contact__actions .button { width: 100%; justify-content: flex-start; }
+
+  .footer__inner { flex-direction: column; align-items: flex-start; gap: .35rem; }
+}
+
+@media (max-width: 420px) {
+  .carousel__slide { flex-basis: 84vw; }
+  .about__photo { flex-basis: 84vw; }
+  .hero__figma-icon { width: 24px; height: 24px; }
+  .hero__figma-icon--gemini { width: 26px; height: 26px; }
 }
 
