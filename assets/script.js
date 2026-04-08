@@ -385,21 +385,22 @@
     return modal;
   }
 
+  const pdfModal = ensurePdfModal();
+  const cvLink = $('#cv-link');
+  if (cvLink) {
+    cvLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const pdfPath = cvLink.getAttribute('href');
+      pdfModal.openPdfModal(pdfPath, 'Curriculum Vitae', cvLink);
+    });
+  }
+
   if (track && carousel) {
     fetch('assets/projects.json', { cache: 'no-cache' })
       .then(r => r.json())
       .then(projects => {
         if (!Array.isArray(projects) || projects.length === 0) return;
-        const pdfModal = ensurePdfModal();
         const equlModal = ensureEqulTemplateModal();
-        const cvLink = $('#cv-link');
-        if (cvLink) {
-          cvLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            const pdfPath = cvLink.getAttribute('href');
-            pdfModal.openPdfModal(pdfPath, 'Curriculum Vitae', cvLink);
-          });
-        }
         const frag = document.createDocumentFragment();
         projects.forEach(project => {
           const slide = document.createElement('article');

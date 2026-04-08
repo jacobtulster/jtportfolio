@@ -126,8 +126,8 @@ body {
 }
 /* Keep Miro tooltip text high-contrast on yellow pill */
 .hero__tool-pill[data-label="Miro"]::after {
-  background: #fcdd34;
-  color: #000;
+  background: #fcdd34 !important;
+  color: #000 !important;
 }
 .hero__figma-icon {
   width: 28px;
