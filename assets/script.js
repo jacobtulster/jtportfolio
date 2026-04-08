@@ -141,7 +141,7 @@
         aria-labelledby="equl-template-title"
       >
         <button class="pdf-modal__close" type="button" aria-label="Close Equl template">×</button>
-        <h3 id="equl-template-title" class="pdf-modal__title">Equl Case Study Template</h3>
+        <h3 id="equl-template-title" class="pdf-modal__title">Equl Case Study</h3>
         <div class="template-modal__content template-modal__content--read-only">
           <article class="template-modal__article" aria-label="Equl project introduction">
             <p>This week, I begin the research of my next project - sustainable development goals. Initial thoughts is that the SDG4 for quality education immediately sticks out for me, especially the rebuilding education systems after COVID-19. This resonates with me a lot because I had to rebuild my own education after COVID, especially whenever my Computer Science teacher had left to join another school and our class did not have a teacher for our key A-Level year, so we essentially had to teach ourselves. We had substitute teachers from other subjects, but our class was really apprehensive about the whole A-Level process, and we did not know what to do that year, especially rebuilding after COVID, which was such a vital time to get education correct.</p>
@@ -391,7 +391,7 @@
     cvLink.addEventListener('click', (e) => {
       e.preventDefault();
       const pdfPath = cvLink.getAttribute('href');
-      pdfModal.openPdfModal(pdfPath, 'Curriculum Vitae', cvLink);
+      pdfModal.openPdfModal(pdfPath, 'Jacob Thompson - CV', cvLink);
     });
   }
 
