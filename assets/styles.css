@@ -124,6 +124,11 @@ body {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+/* Keep Miro tooltip text high-contrast on yellow pill */
+.hero__tool-pill[data-label="Miro"]::after {
+  background: #fcdd34;
+  color: #000;
+}
 .hero__figma-icon {
   width: 28px;
   height: 28px;
