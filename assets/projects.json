@@ -1,15 +1,27 @@
 [
   {
-    "title": "Bara",
-    "role": "Product Designer",
+    "title": "Graphics Design Portfolio",
+    "role": "Graphic Designer",
+    "timeframe": "2024",
+    "summary": "A collection of sports graphics across different design situations, including X (Twitter) posts, Northern Ireland sports teams promotional visuals, digital billboards, and lorry billboard campaigns.",
+    "impact": "Multi-platform sports campaign assets",
+    "tags": ["Sports Graphics", "Social Media Design", "Outdoor Advertising"],
+    "coverImage": "./Graphics Design Portfolio.svg",
+    "slug": "graphics-design-portfolio",
+    "caseStudyUrl": "case-studies/graphics-design-portfolio.html",
+    "metrics": { "assetTypes": "4+", "campaignFormats": "Multi-platform" }
+  },
+  {
+    "title": "Equl",
+    "role": "UX Designer",
     "timeframe": "2023",
-    "summary": "The zen meditation smartwatch app (work in progress)",
-    "impact": "TTV −30%, NPS +9",
-    "tags": ["Mobile Design", "User Research", "Interaction Design"],
-  "coverImage": "./bara svg.svg",
-    "slug": "sme-onboarding",
-    "caseStudyUrl": "case-studies/sme-onboarding.html",
-    "metrics": { "ttvDelta": "-30%", "npsDelta": "+9" }
+    "summary": "A tailored revision app for disabilities and learning impairments.",
+    "impact": "Ship speed +25%, bug rate −15%",
+    "tags": ["Accessibility", "User Research", "Inclusive Design"],
+    "coverImage": "./try 2.svg",
+    "slug": "design-system-rollout",
+    "caseStudyUrl": "case-studies/design-system-rollout.html",
+    "metrics": { "velocity": "+25%", "bugReduction": "-15%" }
   },
   {
     "title": "Smart",
@@ -24,16 +36,16 @@
     "metrics": { "conversionLift": "+12%", "errorReduction": "-18%" }
   },
   {
-    "title": "Equl",
-    "role": "UX Designer",
+    "title": "Bara",
+    "role": "Product Designer",
     "timeframe": "2023",
-    "summary": "A tailored revision app for disabilities and learning impairments (work in progress)",
-    "impact": "Ship speed +25%, bug rate −15%",
-    "tags": ["Accessibility", "User Research", "Inclusive Design"],
-    "coverImage": "./try 2.svg",
-    "slug": "design-system-rollout",
-    "caseStudyUrl": "case-studies/design-system-rollout.html",
-    "metrics": { "velocity": "+25%", "bugReduction": "-15%" }
+    "summary": "The zen meditation smartwatch app (work in progress)",
+    "impact": "TTV −30%, NPS +9",
+    "tags": ["Mobile Design", "User Research", "Interaction Design"],
+  "coverImage": "./bara svg.svg",
+    "slug": "sme-onboarding",
+    "caseStudyUrl": "case-studies/sme-onboarding.html",
+    "metrics": { "ttvDelta": "-30%", "npsDelta": "+9" }
   }
 ]
 
