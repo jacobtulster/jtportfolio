@@ -489,15 +489,15 @@ body {
   .cta .button { width: 100%; }
 
   .about__photos {
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    padding-bottom: .35rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .6rem;
   }
   .about__photo {
-    flex: 0 0 78vw;
+    flex: initial;
+    width: 100%;
     max-width: none;
-    scroll-snap-align: start;
+    aspect-ratio: 3 / 2;
   }
 
   .contact__actions { flex-direction: column; align-items: stretch; }
@@ -508,7 +508,7 @@ body {
 
 @media (max-width: 420px) {
   .carousel__slide { flex-basis: 84vw; }
-  .about__photo { flex-basis: 84vw; }
+  .about__photos { gap: .5rem; }
   .hero__figma-icon { width: 24px; height: 24px; }
   .hero__figma-icon--gemini { width: 26px; height: 26px; }
 }
