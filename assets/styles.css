@@ -302,6 +302,7 @@ body {
 }
 .template-modal__content--read-only {
   overflow: auto;
+  padding-bottom: calc(1.25rem + env(safe-area-inset-bottom));
 }
 .template-modal__hint {
   margin: 0;
@@ -473,8 +474,9 @@ body {
 @media (max-width: 720px) {
   .pdf-modal__panel {
     width: 94vw;
-    height: 88vh;
-    margin: 6vh auto;
+    height: calc(100dvh - 4vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    max-height: 92dvh;
+    margin: 2vh auto;
     border-radius: 12px;
   }
 }
