@@ -206,7 +206,11 @@ body {
   .carousel__btn { width: 38px; height: 38px; }
   .carousel__track { padding: .9rem 8vw; gap: .65rem; }
   .carousel__slide { flex-basis: 78vw; }
-  .carousel .card__body { min-height: 128px; }
+  .carousel .card__body { min-height: 148px; }
+  .carousel .card__summary {
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+  }
 }
 .carousel .card__link { height: auto; grid-template-rows: auto auto; }
 .carousel .card__link { cursor: pointer; }
