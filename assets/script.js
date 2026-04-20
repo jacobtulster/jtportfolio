@@ -584,11 +584,12 @@
         function handleStart(e) {
           const startTarget = e.target;
           const onMedia = !!startTarget.closest('.card__media');
+          const onBody = !!startTarget.closest('.card__body');
           const onCard = !!startTarget.closest('.card');
           const isTouchEvent = e.type === 'touchstart';
-          // On touch devices, allow swipe from anywhere on a card.
+          // On touch devices, allow swipe from media/body (and card) areas.
           // On mouse, keep drag start constrained to media only.
-          if (!(isTouchEvent ? onCard : onMedia)) return;
+          if (!(isTouchEvent ? (onMedia || onBody || onCard) : onMedia)) return;
 
           isDragging = true;
           dragMoved = false;
