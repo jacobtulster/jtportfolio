@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jacob Thompson - Portfolio</title>
+  <style>
+    :root {
+      --text: #121212;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --accent: #0f766e;
+      --bg: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 36px 48px;
+    }
+    h1, h2, h3, p { margin: 0; }
+    .header {
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .profile-photo {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--line);
+      flex-shrink: 0;
+    }
+    .name {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .role {
+      margin-top: 2px;
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .contact {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .contact a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    .section h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .summary {
+      font-size: 15px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .skills span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 13px;
+      background: #f9fafb;
+    }
+    .project {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 10px;
+      break-inside: avoid;
+    }
+    .project-image {
+      width: 100%;
+      max-height: 190px;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 8px 0 2px;
+      background: #ffffff;
+    }
+    .project-media {
+      width: 100%;
+      height: 190px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 8px 0 2px;
+    }
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: baseline;
+    }
+    .project h3 {
+      font-size: 17px;
+      font-weight: 650;
+    }
+    .project .meta {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .project p {
+      margin-top: 7px;
+      font-size: 14px;
+    }
+    .tags {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .graphics-text {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    @page {
+      size: A4;
+      margin: 16mm;
+    }
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { color: inherit; text-decoration: none; }
+      .page { padding: 0; max-width: none; }
+      .header { margin-bottom: 12px; padding-bottom: 10px; }
+      .profile-photo { width: 68px; height: 68px; }
+      .name { font-size: 26px; }
+      .role { font-size: 16px; }
+      .contact { margin-top: 6px; font-size: 13px; }
+      .section { margin-top: 12px; }
+      .summary { font-size: 13px; }
+      .skills { margin-top: 8px; gap: 6px; }
+      .skills span { font-size: 12px; padding: 3px 8px; }
+      .project { padding: 8px 10px; margin-top: 8px; }
+      .project h3 { font-size: 16px; }
+      .project .meta { font-size: 12px; }
+      .project p { margin-top: 5px; font-size: 12px; }
+      .tags { margin-top: 6px; font-size: 12px; }
+      .project-image { max-height: 120px; margin: 6px 0 1px; }
+      .project-media { height: 120px; margin: 6px 0 1px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="header-inner">
+        <img class="profile-photo" src="assets/benji and me.png" alt="Jacob Thompson with Benji">
+        <div>
+          <h1 class="name">Jacob Thompson</h1>
+          <p class="role">UX/Product Designer</p>
+          <p class="contact">
+            Northern Ireland | <a href="mailto:jacobttt000@gmail.com">jacobttt000@gmail.com</a> |
+            <a href="https://jacobt.work">jacobt.work</a>
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Profile</h2>
+      <p class="summary">
+        UX designer focused on accessible, inclusive digital experiences. I take projects end-to-end:
+        define the problem, run user research, design and prototype solutions, and iterate from testing feedback.
+        My goal is to deliver products that are usable for everyone, including users with learning and accessibility needs.
+      </p>
+      <div class="skills">
+        <span>Accessibility (WCAG-aware)</span>
+        <span>Inclusive Design</span>
+        <span>User Research</span>
+        <span>Usability Testing</span>
+        <span>Rapid Prototyping</span>
+        <span>Interaction Design</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Full Graphics Design Portfolio</h2>
+      <p class="graphics-text">jacobt.work</p>
+    </section>
+
+    <section class="section">
+      <h2>Selected Work</h2>
+
+      <article class="project">
+        <div class="project-top">
+          <h3>Equl</h3>
+          <p class="meta">UX Designer | 2025</p>
+        </div>
+        <img class="project-image" src="assets/equl.svg" alt="Equl project visual">
+        <p>
+          Designed a tailored revision app for users with disabilities and learning impairments, with a strong
+          emphasis on accessibility-first onboarding and gamified learning journeys.
+        </p>
+        <p class="tags">Focus: Accessibility, User Research, Inclusive Design</p>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <h3>Smart</h3>
+          <p class="meta">UX Designer | 2024</p>
+        </div>
+        <img class="project-image" src="assets/smart svg.svg" alt="Smart online banking project visual">
+        <p>
+          Designed web 3.0 online banking experiences with clear onboarding, security-conscious interaction patterns,
+          and accessible user flows.
+        </p>
+        <p class="tags">Focus: Onboarding, Security, Accessibility</p>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <h3>Graphics Design Portfolio</h3>
+          <p class="meta">Graphic Designer | 2023</p>
+        </div>
+        <img class="project-image" src="assets/Graphics Design Portfolio.svg" alt="Graphics portfolio visual preview">
+        <p>
+          Produced sports campaign graphics for social media, digital billboards, and large-format outdoor placements
+          across multiple visual contexts.
+        </p>
+        <p class="tags">Focus: Sports Graphics, Social Media Design, Outdoor Advertising</p>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <h3>Bara</h3>
+          <p class="meta">UX Designer | 2026</p>
+        </div>
+        <div class="project-media" style="background: url('assets/bara svg.svg') center center / contain no-repeat, linear-gradient(135deg, rgb(25, 20, 17), rgb(48, 45, 41)) center center / cover no-repeat;"></div>
+        <p>
+          Work-in-progress smartwatch meditation app exploring calm interaction patterns and habit-focused mobile UX.
+        </p>
+        <p class="tags">Focus: Mobile Design, User Research, Interaction Design</p>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>

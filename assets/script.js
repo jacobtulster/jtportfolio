@@ -461,6 +461,7 @@
           const normalizedTitle = (project.title || '').toLowerCase();
           const isGraphicsPortfolio = normalizedTitle === 'graphics design portfolio';
           const isSmartCard = normalizedTitle === 'smart';
+          const isAnchorCard = normalizedTitle === 'anchor';
           const isEqulCard = normalizedTitle === 'equl';
 
           if (isGraphicsPortfolio) {
@@ -488,14 +489,14 @@
             });
           }
 
-          if (isSmartCard) {
+          if (isSmartCard || isAnchorCard) {
             card.classList.add('card--interactive');
             card.setAttribute('role', 'link');
             card.setAttribute('tabindex', '0');
-            card.setAttribute('aria-label', `Open ${project.title || 'Smart'} case study`);
+            card.setAttribute('aria-label', `Open ${project.title || 'case study'} case study`);
             card.dataset.caseStudyUrl = project.caseStudyUrl || '#';
 
-            const openSmartCard = () => {
+            const openCaseStudyCard = () => {
               const url = card.dataset.caseStudyUrl;
               if (!url || url === '#') return;
               if (url.startsWith('http')) {
@@ -507,13 +508,13 @@
 
             card.addEventListener('click', (e) => {
               if (e.target.closest('a')) return;
-              openSmartCard();
+              openCaseStudyCard();
             });
 
             card.addEventListener('keydown', (e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                openSmartCard();
+                openCaseStudyCard();
               }
             });
           }
@@ -693,12 +694,17 @@
           if (e.key === 'ArrowLeft') go(index - 1);
         });
 
-        // initial center after layout - prefer Equl as the starting slide
+        // initial center after layout - prefer Anchor as the starting slide
         requestAnimationFrame(() => {
+          const anchorIndex = projects.findIndex(
+            project => (project.title || '').toLowerCase() === 'anchor'
+          );
           const equlIndex = projects.findIndex(
             project => (project.title || '').toLowerCase() === 'equl'
           );
-          const startIndex = equlIndex >= 0 ? equlIndex : Math.floor(slideCount / 2);
+          const startIndex = anchorIndex >= 0
+            ? anchorIndex
+            : (equlIndex >= 0 ? equlIndex : Math.floor(slideCount / 2));
           index = startIndex;
           center(startIndex);
         });

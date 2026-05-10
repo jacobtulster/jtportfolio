@@ -12,6 +12,18 @@
     "metrics": { "assetTypes": "4+", "campaignFormats": "Multi-platform" }
   },
   {
+    "title": "Anchor",
+    "role": "UX Designer",
+    "timeframe": "2026",
+    "summary": "Supporting young fathers leaving prison to rebuild family relationships and reconnect with society. (In collaboration with SEHSCT).",
+    "impact": "Community reintegration support",
+    "tags": ["Social Impact", "Service Design", "Collaboration"],
+    "coverImage": "assets/Anchor.svg",
+    "slug": "anchor",
+    "caseStudyUrl": "https://www.notion.so/Anchor-Project-with-SEHSCT-2f8de1f8a93c80149913e31d58eddc8c?source=copy_link",
+    "metrics": { "focus": "Young fathers", "partner": "SEHSCT" }
+  },
+  {
     "title": "Equl",
     "role": "UX Designer",
     "timeframe": "2023",
