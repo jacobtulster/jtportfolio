@@ -24,6 +24,18 @@
     "metrics": { "focus": "Young fathers", "partner": "SEHSCT" }
   },
   {
+    "title": "Future Living Project",
+    "role": "UX Designer",
+    "timeframe": "2026",
+    "summary": "Bloom Buddy projects hyper-realistic outdoor environments into elderly users' living rooms for those who can no longer access the outdoors. (Speculative design, 2076)",
+    "impact": "Immersive living-room experiences",
+    "tags": ["Speculative Design", "Prototyping", "Inclusive Design"],
+    "coverImage": "assets/Elderly Living Room.svg",
+    "slug": "future-living-project",
+    "caseStudyUrl": "https://jacobtulster.github.io/Elderly-Living-Room/",
+    "metrics": { "product": "Bloom Buddy", "year": "2076 (spec)" }
+  },
+  {
     "title": "Equl",
     "role": "UX Designer",
     "timeframe": "2023",

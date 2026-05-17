@@ -460,8 +460,7 @@
           body.append(h3, p, tags);
           const normalizedTitle = (project.title || '').toLowerCase();
           const isGraphicsPortfolio = normalizedTitle === 'graphics design portfolio';
-          const isSmartCard = normalizedTitle === 'smart';
-          const isAnchorCard = normalizedTitle === 'anchor';
+          const hasExternalCaseStudy = /^https?:\/\//i.test(project.caseStudyUrl || '');
           const isEqulCard = normalizedTitle === 'equl';
 
           if (isGraphicsPortfolio) {
@@ -489,7 +488,7 @@
             });
           }
 
-          if (isSmartCard || isAnchorCard) {
+          if (hasExternalCaseStudy) {
             card.classList.add('card--interactive');
             card.setAttribute('role', 'link');
             card.setAttribute('tabindex', '0');
