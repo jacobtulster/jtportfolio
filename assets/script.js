@@ -347,13 +347,14 @@
         img.setAttribute('tabindex', '0');
         img.setAttribute('role', 'button');
         img.setAttribute('aria-label', `${img.alt || 'Image'} - click to zoom`);
+        const getZoomSrc = () => img.dataset.zoomSrc || img.getAttribute('src');
         img.addEventListener('click', () => {
-          imageLightbox.openImageLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+          imageLightbox.openImageLightbox(getZoomSrc(), img.getAttribute('alt'));
         });
         img.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            imageLightbox.openImageLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+            imageLightbox.openImageLightbox(getZoomSrc(), img.getAttribute('alt'));
           }
         });
       });

@@ -223,7 +223,7 @@ body {
 .about { display: grid; gap: 1rem; background: var(--bg); }
 .about > p { margin: 0; }
 .about__photos { display: flex; flex-wrap: nowrap; gap: .75rem; justify-content: flex-start; align-items: flex-start; overflow: visible; padding: 0; }
-.about__photo { display: block; flex: 1 1 calc((100% - 2.25rem) / 4); width: auto; max-width: 320px; aspect-ratio: 3 / 2; height: auto; object-fit: cover; object-position: center; border-radius: 12px; margin: 0; image-rendering: auto; }
+.about__photo { display: block; flex: 1 1 calc((100% - 2.25rem) / 4); width: auto; max-width: 320px; aspect-ratio: 3 / 2; height: auto; object-fit: cover; object-position: center; border-radius: 12px; margin: 0; image-rendering: auto; background: var(--surface); }
 .pill-list { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
 .pill { border: 1px solid var(--border); background: var(--surface); padding: .35rem .6rem; border-radius: 999px; color: var(--muted); }
 
