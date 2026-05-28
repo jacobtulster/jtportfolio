@@ -407,6 +407,7 @@
           const slide = document.createElement('article');
           slide.className = 'carousel__slide';
           slide.setAttribute('role', 'listitem');
+          slide.dataset.categories = (project.categories || []).join(',');
 
           const container = document.createElement('div');
           container.className = 'container';
@@ -555,30 +556,68 @@
 
         const prev = $('.carousel__btn.prev');
         const next = $('.carousel__btn.next');
+        const filterTabs = $$('.project-filters__tab');
+
         let index = 0;
         const slides = Array.from(track.children);
-        const slideCount = slides.length;
+        let activeFilter = 'all';
         let isDragging = false;
         let dragMoved = false; // differentiate a real drag vs. a simple click
         let startX = 0;
         let currentX = 0;
         let initialTransform = 0;
 
-        function center(indexToCenter) {
+        function getVisibleSlides() {
+          return slides.filter(slide => !slide.hasAttribute('hidden'));
+        }
+
+        function updateFilterTabs() {
+          filterTabs.forEach(tab => {
+            const isActive = tab.dataset.filter === activeFilter;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+        }
+
+        function slideMatchesFilter(slide, filterId) {
+          if (filterId === 'all') return true;
+          const categories = (slide.dataset.categories || '').split(',').filter(Boolean);
+          return categories.includes(filterId);
+        }
+
+        function applyFilter(filterId) {
+          activeFilter = filterId;
+          slides.forEach(slide => {
+            if (slideMatchesFilter(slide, filterId)) slide.removeAttribute('hidden');
+            else slide.setAttribute('hidden', '');
+          });
+          updateFilterTabs();
+          const visible = getVisibleSlides();
+          index = 0;
+          if (visible.length) centerSlide(visible[0]);
+          else track.style.transform = 'translateX(0)';
+          if (prev) prev.disabled = visible.length <= 1;
+          if (next) next.disabled = visible.length <= 1;
+        }
+
+        function centerSlide(slide) {
+          const visible = getVisibleSlides();
           const viewportWidth = carousel.getBoundingClientRect().width;
-          const slide = slides[indexToCenter];
           const slideRect = slide.getBoundingClientRect();
           const trackRect = track.getBoundingClientRect();
           const slideLeftInTrack = slideRect.left - trackRect.left;
           const target = slideLeftInTrack + (slideRect.width / 2) - (viewportWidth / 2);
           track.style.transform = `translateX(${-target}px)`;
-          if (prev) prev.disabled = indexToCenter === 0;
-          if (next) next.disabled = indexToCenter === slideCount - 1;
+          index = Math.max(0, visible.indexOf(slide));
+          if (prev) prev.disabled = index <= 0;
+          if (next) next.disabled = index >= visible.length - 1;
         }
 
         function go(to) {
-          index = Math.max(0, Math.min(slideCount - 1, to));
-          center(index);
+          const visible = getVisibleSlides();
+          if (!visible.length) return;
+          const nextIndex = Math.max(0, Math.min(visible.length - 1, to));
+          centerSlide(visible[nextIndex]);
         }
 
         // Drag functionality
@@ -630,16 +669,17 @@
           const diffX = currentX - startX;
           const threshold = 50;
           
+          const visible = getVisibleSlides();
           if (Math.abs(diffX) > threshold) {
             if (diffX > 0 && index > 0) {
               go(index - 1);
-            } else if (diffX < 0 && index < slideCount - 1) {
+            } else if (diffX < 0 && index < visible.length - 1) {
               go(index + 1);
-            } else {
-              center(index);
+            } else if (visible[index]) {
+              centerSlide(visible[index]);
             }
-          } else {
-            center(index);
+          } else if (visible[index]) {
+            centerSlide(visible[index]);
           }
           // Important: reset drag state after click event has had a chance to fire
           // so future clicks on non-media areas are not blocked by stale state
@@ -684,10 +724,21 @@
         document.addEventListener('mouseup', handleEnd);
         document.addEventListener('touchend', handleEnd);
 
-        const onResize = () => center(index);
+        const onResize = () => {
+          const visible = getVisibleSlides();
+          if (visible[index]) centerSlide(visible[index]);
+        };
         window.addEventListener('resize', onResize);
         prev && prev.addEventListener('click', () => go(index - 1));
         next && next.addEventListener('click', () => go(index + 1));
+
+        filterTabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            const filterId = tab.dataset.filter || 'all';
+            if (filterId === activeFilter) return;
+            applyFilter(filterId);
+          });
+        });
 
         window.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowRight') go(index + 1);
@@ -704,9 +755,9 @@
           );
           const startIndex = anchorIndex >= 0
             ? anchorIndex
-            : (equlIndex >= 0 ? equlIndex : Math.floor(slideCount / 2));
-          index = startIndex;
-          center(startIndex);
+            : (equlIndex >= 0 ? equlIndex : Math.floor(slides.length / 2));
+          const startSlide = slides[startIndex] || getVisibleSlides()[0];
+          if (startSlide) centerSlide(startSlide);
         });
       })
       .catch(() => { /* no-op */ });

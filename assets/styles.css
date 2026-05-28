@@ -177,8 +177,130 @@ body {
 .tags { display: flex; flex-wrap: wrap; gap: .35rem; list-style: none; margin: .25rem 0 0; padding: 0; }
 .tags li { font-size: .8rem; color: #A9AFBB; border: 1px dashed var(--border); background: #1a1c1e; padding: .15rem .45rem; border-radius: 999px; display: inline-flex; align-items: center; line-height: 1; }
 
+/* Portfolio discipline filters */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: .75rem 0 1rem;
+}
+.project-filters__tab {
+  font: inherit;
+  font-size: .82rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .35rem .75rem;
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.project-filters__tab:hover {
+  color: var(--text);
+  border-color: #3a3f48;
+}
+.project-filters__tab.is-active[data-filter="all"] {
+  color: var(--text);
+  background: #1f2329;
+  border-color: #4a5160;
+}
+.project-filters__tab[data-filter="graphic-design"] {
+  color: #f9a8d4;
+  border-color: rgba(244, 114, 182, .5);
+  background: rgba(244, 114, 182, .08);
+}
+.project-filters__tab[data-filter="graphic-design"]:hover {
+  color: #fbcfe8;
+  border-color: rgba(244, 114, 182, .75);
+  background: rgba(244, 114, 182, .14);
+}
+.project-filters__tab[data-filter="graphic-design"].is-active {
+  color: #1a0812;
+  background: #f472b6;
+  border-color: #f472b6;
+}
+.project-filters__tab[data-filter="ui-ux-design"] {
+  color: #93c5fd;
+  border-color: rgba(96, 165, 250, .5);
+  background: rgba(96, 165, 250, .08);
+}
+.project-filters__tab[data-filter="ui-ux-design"]:hover {
+  color: #bfdbfe;
+  border-color: rgba(96, 165, 250, .75);
+  background: rgba(96, 165, 250, .14);
+}
+.project-filters__tab[data-filter="ui-ux-design"].is-active {
+  color: #0a1628;
+  background: #60a5fa;
+  border-color: #60a5fa;
+}
+.project-filters__tab[data-filter="service-design"] {
+  color: #6ee7b7;
+  border-color: rgba(52, 211, 153, .5);
+  background: rgba(52, 211, 153, .08);
+}
+.project-filters__tab[data-filter="service-design"]:hover {
+  color: #a7f3d0;
+  border-color: rgba(52, 211, 153, .75);
+  background: rgba(52, 211, 153, .14);
+}
+.project-filters__tab[data-filter="service-design"].is-active {
+  color: #052e1f;
+  background: #34d399;
+  border-color: #34d399;
+}
+.project-filters__tab[data-filter="inclusive-design"] {
+  color: #fcd34d;
+  border-color: rgba(251, 191, 36, .5);
+  background: rgba(251, 191, 36, .08);
+}
+.project-filters__tab[data-filter="inclusive-design"]:hover {
+  color: #fde68a;
+  border-color: rgba(251, 191, 36, .75);
+  background: rgba(251, 191, 36, .14);
+}
+.project-filters__tab[data-filter="inclusive-design"].is-active {
+  color: #1c1403;
+  background: #fbbf24;
+  border-color: #fbbf24;
+}
+.project-filters__tab[data-filter="speculative-design"] {
+  color: #c4b5fd;
+  border-color: rgba(167, 139, 250, .5);
+  background: rgba(167, 139, 250, .08);
+}
+.project-filters__tab[data-filter="speculative-design"]:hover {
+  color: #ddd6fe;
+  border-color: rgba(167, 139, 250, .75);
+  background: rgba(167, 139, 250, .14);
+}
+.project-filters__tab[data-filter="speculative-design"].is-active {
+  color: #140f24;
+  background: #a78bfa;
+  border-color: #a78bfa;
+}
+.project-filters__tab:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+@media (prefers-color-scheme: light) {
+  .project-filters__tab[data-filter="graphic-design"].is-active,
+  .project-filters__tab[data-filter="ui-ux-design"].is-active,
+  .project-filters__tab[data-filter="service-design"].is-active,
+  .project-filters__tab[data-filter="inclusive-design"].is-active,
+  .project-filters__tab[data-filter="speculative-design"].is-active {
+    color: #fff;
+  }
+  .project-filters__tab.is-active[data-filter="all"] {
+    background: #e8eaee;
+    border-color: #c5cad4;
+    color: var(--text);
+  }
+}
+
 /* Carousel */
 .section--projects { padding: 1rem 0 0; background: var(--bg); }
+.carousel__slide[hidden] { display: none; }
 .carousel { position: relative; width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg); }
 .carousel__track { display: flex; gap: clamp(.5rem, 1.5vw, 1rem); padding: clamp(.75rem, 2vw, 1.5rem) clamp(35vw, 40vw, 400px); transition: transform .35s ease; will-change: transform; cursor: grab; }
 .carousel__track:active { cursor: grabbing; }
