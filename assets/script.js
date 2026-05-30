@@ -123,6 +123,171 @@
     return modal;
   }
 
+  function ensureImageLightbox() {
+    let lightbox = $('#image-lightbox');
+    if (lightbox) return lightbox;
+
+    lightbox = document.createElement('div');
+    lightbox.id = 'image-lightbox';
+    lightbox.className = 'image-lightbox';
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.innerHTML = `
+      <div class="image-lightbox__backdrop" data-close-image-lightbox="true"></div>
+      <figure class="image-lightbox__panel" role="dialog" aria-modal="true" aria-label="Expanded image preview">
+        <button class="image-lightbox__close" type="button" aria-label="Close image preview">×</button>
+        <img class="image-lightbox__img" src="" alt="">
+      </figure>
+    `;
+
+    const lbPanel = $('.image-lightbox__panel', lightbox);
+    const lbImg = $('.image-lightbox__img', lightbox);
+    const lbClose = $('.image-lightbox__close', lightbox);
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      if (lbImg) {
+        lbImg.src = '';
+        lbImg.alt = '';
+      }
+    }
+
+    function openLightbox(src, alt) {
+      if (!lbImg || !src) return;
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      lbClose && lbClose.focus();
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (!lbPanel.contains(e.target) || e.target.closest('[data-close-image-lightbox="true"]')) {
+        closeLightbox();
+      }
+    });
+    lbClose && lbClose.addEventListener('click', closeLightbox);
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
+
+    lightbox.openImageLightbox = openLightbox;
+    lightbox.closeImageLightbox = closeLightbox;
+    document.body.appendChild(lightbox);
+    return lightbox;
+  }
+
+  function makeImagesZoomable(images) {
+    const imageLightbox = ensureImageLightbox();
+    images.forEach((img) => {
+      img.classList.add('is-zoomable');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', `${img.alt || 'Image'} - click to zoom`);
+      const getZoomSrc = () => img.dataset.zoomSrc || img.getAttribute('src');
+      img.addEventListener('click', () => {
+        imageLightbox.openImageLightbox(getZoomSrc(), img.getAttribute('alt'));
+      });
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          imageLightbox.openImageLightbox(getZoomSrc(), img.getAttribute('alt'));
+        }
+      });
+    });
+  }
+
+  function ensureGalleryModal() {
+    let modal = $('#gallery-modal');
+    if (modal) return modal;
+
+    let activeGalleryTrigger = null;
+    modal = document.createElement('div');
+    modal.id = 'gallery-modal';
+    modal.className = 'pdf-modal';
+    modal.setAttribute('aria-hidden', 'true');
+
+    modal.innerHTML = `
+      <div class="pdf-modal__backdrop" data-close-gallery-modal="true"></div>
+      <section
+        class="pdf-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="gallery-modal-title"
+      >
+        <button class="pdf-modal__close" type="button" aria-label="Close gallery viewer">×</button>
+        <h3 id="gallery-modal-title" class="pdf-modal__title">Project gallery</h3>
+        <div class="template-modal__content template-modal__content--read-only">
+          <article class="template-modal__article" id="gallery-modal-content"></article>
+        </div>
+      </section>
+    `;
+
+    const closeBtn = $('.pdf-modal__close', modal);
+    const closeBackdrop = $('[data-close-gallery-modal="true"]', modal);
+    const panel = $('.pdf-modal__panel', modal);
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('has-modal-open');
+      if (activeGalleryTrigger) activeGalleryTrigger.focus();
+      activeGalleryTrigger = null;
+    }
+
+    function openModal(title, images, summary, triggerEl) {
+      const titleEl = $('#gallery-modal-title', modal);
+      const content = $('#gallery-modal-content', modal);
+      if (titleEl && title) titleEl.textContent = title;
+      if (content) {
+        content.innerHTML = '';
+        if (summary) {
+          const intro = document.createElement('p');
+          intro.textContent = summary;
+          content.appendChild(intro);
+        }
+        (images || []).forEach((image) => {
+          const figure = document.createElement('figure');
+          figure.className = 'template-modal__figure';
+          const img = document.createElement('img');
+          img.className = 'template-modal__image';
+          img.src = image.src;
+          img.alt = image.alt || '';
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          figure.appendChild(img);
+          if (image.caption) {
+            const caption = document.createElement('figcaption');
+            caption.className = 'template-modal__caption';
+            caption.textContent = image.caption;
+            figure.appendChild(caption);
+          }
+          content.appendChild(figure);
+        });
+        makeImagesZoomable($$('.template-modal__image', content));
+      }
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('has-modal-open');
+      activeGalleryTrigger = triggerEl || null;
+      closeBtn && closeBtn.focus();
+    }
+
+    closeBtn && closeBtn.addEventListener('click', closeModal);
+    closeBackdrop && closeBackdrop.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (!panel.contains(e.target)) closeModal();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+
+    modal.openGalleryModal = openModal;
+    modal.closeGalleryModal = closeModal;
+    document.body.appendChild(modal);
+    return modal;
+  }
+
   function ensureEqulTemplateModal() {
     let modal = $('#equl-template-modal');
     if (modal) return modal;
@@ -286,80 +451,6 @@
       closeBtn && closeBtn.focus();
     }
 
-    function ensureImageLightbox() {
-      let lightbox = $('#image-lightbox');
-      if (lightbox) return lightbox;
-
-      lightbox = document.createElement('div');
-      lightbox.id = 'image-lightbox';
-      lightbox.className = 'image-lightbox';
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightbox.innerHTML = `
-        <div class="image-lightbox__backdrop" data-close-image-lightbox="true"></div>
-        <figure class="image-lightbox__panel" role="dialog" aria-modal="true" aria-label="Expanded image preview">
-          <button class="image-lightbox__close" type="button" aria-label="Close image preview">×</button>
-          <img class="image-lightbox__img" src="" alt="">
-        </figure>
-      `;
-
-      const lbPanel = $('.image-lightbox__panel', lightbox);
-      const lbImg = $('.image-lightbox__img', lightbox);
-      const lbClose = $('.image-lightbox__close', lightbox);
-
-      function closeLightbox() {
-        lightbox.classList.remove('is-open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        if (lbImg) {
-          lbImg.src = '';
-          lbImg.alt = '';
-        }
-      }
-
-      function openLightbox(src, alt) {
-        if (!lbImg || !src) return;
-        lbImg.src = src;
-        lbImg.alt = alt || '';
-        lightbox.classList.add('is-open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        lbClose && lbClose.focus();
-      }
-
-      lightbox.addEventListener('click', (e) => {
-        if (!lbPanel.contains(e.target) || e.target.closest('[data-close-image-lightbox="true"]')) {
-          closeLightbox();
-        }
-      });
-      lbClose && lbClose.addEventListener('click', closeLightbox);
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
-      });
-
-      lightbox.openImageLightbox = openLightbox;
-      lightbox.closeImageLightbox = closeLightbox;
-      document.body.appendChild(lightbox);
-      return lightbox;
-    }
-
-    const imageLightbox = ensureImageLightbox();
-    function makeImagesZoomable(images) {
-      images.forEach((img) => {
-        img.classList.add('is-zoomable');
-        img.setAttribute('tabindex', '0');
-        img.setAttribute('role', 'button');
-        img.setAttribute('aria-label', `${img.alt || 'Image'} - click to zoom`);
-        const getZoomSrc = () => img.dataset.zoomSrc || img.getAttribute('src');
-        img.addEventListener('click', () => {
-          imageLightbox.openImageLightbox(getZoomSrc(), img.getAttribute('alt'));
-        });
-        img.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            imageLightbox.openImageLightbox(getZoomSrc(), img.getAttribute('alt'));
-          }
-        });
-      });
-    }
-
     const zoomableImages = $$('.template-modal__image', modal);
     makeImagesZoomable(zoomableImages);
 
@@ -402,6 +493,7 @@
       .then(projects => {
         if (!Array.isArray(projects) || projects.length === 0) return;
         const equlModal = ensureEqulTemplateModal();
+        const galleryModal = ensureGalleryModal();
         const frag = document.createDocumentFragment();
         projects.forEach(project => {
           const slide = document.createElement('article');
@@ -429,6 +521,11 @@
               media.style.backgroundRepeat = 'no-repeat, no-repeat';
             } else if (project.coverImage === 'assets/try 2.svg') {
               media.style.background = `url("${project.coverImage}"), #222223`;
+              media.style.backgroundSize = 'contain, cover';
+              media.style.backgroundPosition = 'center, center';
+              media.style.backgroundRepeat = 'no-repeat, no-repeat';
+            } else if ((project.coverImage || '').includes('NIE-FullArtboard')) {
+              media.style.background = `url("${project.coverImage}"), linear-gradient(135deg, #0a1628, #1a3a5c)`;
               media.style.backgroundSize = 'contain, cover';
               media.style.backgroundPosition = 'center, center';
               media.style.backgroundRepeat = 'no-repeat, no-repeat';
@@ -486,6 +583,35 @@
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 openFromCard();
+              }
+            });
+          }
+
+          const hasGallery = Array.isArray(project.gallery) && project.gallery.length > 0;
+          if (hasGallery) {
+            card.classList.add('card--interactive');
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', `Open ${project.title || 'project'} gallery`);
+
+            const openGalleryFromCard = () => {
+              galleryModal.openGalleryModal(
+                project.title || 'Project gallery',
+                project.gallery,
+                project.summary || '',
+                card
+              );
+            };
+
+            card.addEventListener('click', (e) => {
+              if (e.target.closest('a')) return;
+              openGalleryFromCard();
+            });
+
+            card.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openGalleryFromCard();
               }
             });
           }

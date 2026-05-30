@@ -1,5 +1,34 @@
 [
   {
+    "title": "NIE Networks Design Task",
+    "role": "Graphic Designer",
+    "timeframe": "2026",
+    "summary": "Promotional apprenticeship graphics for NIE Networks’ Quantity Surveying Higher Level Apprenticeship, developed as three colour-way variants for digital campaign use.",
+    "impact": "3 campaign artboard variants",
+    "tags": ["Campaign Design", "Brand Guidelines", "Apprenticeship Marketing"],
+    "categories": ["graphic-design"],
+    "coverImage": "assets/NIE-FullArtboard-1.png",
+    "slug": "nie-networks-design-task",
+    "gallery": [
+      {
+        "src": "assets/NIE-FullArtboard-1.png",
+        "alt": "NIE Networks Quantity Surveying apprenticeship graphic — navy and blue variant with on-site surveyors",
+        "caption": "Variant 1 — Navy & blue"
+      },
+      {
+        "src": "assets/NIE-FullArtboard-2.png",
+        "alt": "NIE Networks Quantity Surveying apprenticeship graphic — magenta and purple variant with student portrait",
+        "caption": "Variant 2 — Magenta & purple"
+      },
+      {
+        "src": "assets/NIE-FullArtboard-3.png",
+        "alt": "NIE Networks Quantity Surveying apprenticeship graphic — teal and green variant with student portrait",
+        "caption": "Variant 3 — Teal & green"
+      }
+    ],
+    "metrics": { "variants": "3", "client": "NIE Networks" }
+  },
+  {
     "title": "Graphics Design Portfolio",
     "role": "Graphic Designer",
     "timeframe": "2024",

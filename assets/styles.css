@@ -171,6 +171,7 @@ body {
 @media (max-width: 920px) { .card { grid-column: span 12; } }
 .card__link { color: inherit; text-decoration: none; display: grid; grid-template-rows: auto 1fr; height: 100%; }
 .card__media { background: linear-gradient(135deg, rgba(122,162,255,.25), rgba(56,178,111,.25)); aspect-ratio: 16/9; border-bottom: 1px solid var(--border); background-size: contain; background-repeat: no-repeat; background-position: center; }
+.card__media--cover { background-size: cover; }
 .card__body { padding: .9rem; display: grid; gap: .5rem; }
 .card__title { margin: 0; font-size: 1.05rem; }
 .card__summary { margin: 0; color: var(--muted); }
