@@ -1,0 +1,34 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 123" width="128" height="123">
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(97.343,-0.296,.039,12.908,16.762,116.501)">
+			<stop offset="0" stop-color="#ffc102"/>
+			<stop offset=".75" stop-color="#fbb4e9"/>
+		</linearGradient>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 27.97c0-8.38 6.82-15.18 15.24-15.18h97.52c8.42 0 15.24 6.8 15.24 15.18v66.78c0 8.38-6.82 15.17-15.24 15.17h-97.52c-8.42 0-15.24-6.79-15.24-15.17z"/>
+		</clipPath>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1"> <feGaussianBlur stdDeviation="7.6"/> </filter>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.379,53.118,-76.452,.546,63.62,56.804)">
+			<stop offset="0" stop-color="#febe00"/>
+			<stop offset="1" stop-color="#feed44"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: #fedb0e } 
+		.s1 { fill: url(#g1) } 
+		.s2 { fill: #febe00 } 
+		.s3 { filter: url(#f1);fill: url(#g2) } 
+		.s4 { fill: #fffeff } 
+	</style>
+	<path class="s0" d="m96.79 0.19c8.31-1.31 16.12 4.34 17.43 12.61l0.01 0.06q-0.72-0.07-1.47-0.07h-95.87z"/>
+	<path class="s1" d="m34.2 122.6c-8.31 1.31-16.11-4.34-17.43-12.62l-0.01-0.06q0.73 0.07 1.47 0.07h95.88z"/>
+	<path class="s2" d="m0 27.97c0-8.38 6.82-15.18 15.24-15.18h97.52c8.42 0 15.24 6.8 15.24 15.18v66.78c0 8.38-6.82 15.17-15.24 15.17h-97.52c-8.42 0-15.24-6.79-15.24-15.17z"/>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g>
+			<g>
+				<path fill-rule="evenodd" class="s3" d="m119.62 56.8v77.4h-112v-77.4z"/>
+			</g>
+		</g>
+	</g>
+	<path class="s4" d="m108.19 85.64l-0.01 0.23c-0.11 2.33-1.99 4.2-4.33 4.32h-0.23-79.24-0.23c-2.34-0.12-4.22-1.99-4.33-4.32l-0.01-0.23v-48.57c0-2.51 2.05-4.55 4.57-4.55h79.24l0.23 0.01c2.42 0.12 4.34 2.11 4.34 4.54zm-79.24-4.55h70.1v-39.46h-70.1z"/>
+</svg>
