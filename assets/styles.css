@@ -91,7 +91,42 @@ body {
 }
 
 .hero { padding: clamp(3rem, 8vw, 7rem) 0 2rem; border-bottom: 1px solid var(--border); background: radial-gradient(1000px 600px at 20% -20%, rgba(122,162,255,.12), transparent 60%), radial-gradient(900px 600px at 90% 10%, rgba(38,199,130,.08), transparent 60%); }
-.hero h1 { font-size: clamp(1.1rem, 5vw, 3rem); line-height: 1.2; margin: 0 0 .5rem; white-space: nowrap; }
+.hero h1 { font-size: clamp(1.1rem, 5vw, 3rem); line-height: 1.2; margin: 0 0 .45rem; white-space: nowrap; }
+.hero__roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: 0 0 .85rem;
+}
+.hero__role-pill {
+  font-size: .82rem;
+  line-height: 1;
+  border-radius: 999px;
+  padding: .35rem .75rem;
+  border: 1px solid transparent;
+  user-select: none;
+  pointer-events: none;
+}
+.hero__role-pill--graphic {
+  color: #ff8a8a;
+  background: rgba(255, 107, 107, .12);
+  border-color: rgba(255, 107, 107, .35);
+}
+.hero__role-pill--ui-ux {
+  color: #5eead4;
+  background: rgba(45, 212, 191, .12);
+  border-color: rgba(45, 212, 191, .35);
+}
+.hero__role-pill--product {
+  color: #fdba74;
+  background: rgba(251, 146, 60, .12);
+  border-color: rgba(251, 146, 60, .35);
+}
+.hero__role-pill--brand {
+  color: #d8b4fe;
+  background: rgba(192, 132, 252, .12);
+  border-color: rgba(192, 132, 252, .35);
+}
 .subtitle { color: var(--muted); font-size: clamp(1rem, 2.5vw, 1.15rem); margin: 0 0 1rem; }
 .hero__tool-icons {
   display: flex;
