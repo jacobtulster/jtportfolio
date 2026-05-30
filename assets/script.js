@@ -871,18 +871,9 @@
           if (e.key === 'ArrowLeft') go(index - 1);
         });
 
-        // initial center after layout - prefer Anchor as the starting slide
+        // initial center after layout — start at the first slide (far left)
         requestAnimationFrame(() => {
-          const anchorIndex = projects.findIndex(
-            project => (project.title || '').toLowerCase() === 'anchor'
-          );
-          const equlIndex = projects.findIndex(
-            project => (project.title || '').toLowerCase() === 'equl'
-          );
-          const startIndex = anchorIndex >= 0
-            ? anchorIndex
-            : (equlIndex >= 0 ? equlIndex : Math.floor(slides.length / 2));
-          const startSlide = slides[startIndex] || getVisibleSlides()[0];
+          const startSlide = getVisibleSlides()[0] || slides[0];
           if (startSlide) centerSlide(startSlide);
         });
       })
